@@ -1154,7 +1154,7 @@
     // This line will be used in regexes to search for lit-html usage.
     // TODO(justinfagnani): inject version number at build time
     if (typeof window !== 'undefined') {
-        (window['litHtmlVersions'] || (window['litHtmlVersions'] = [])).push('1.4.1');
+        (window['litHtmlVersions'] || (window['litHtmlVersions'] = [])).push('1.3.0');
     }
     /**
      * Interprets a template literal as an HTML template that can efficiently
@@ -59058,10 +59058,7 @@ vec4 envMapTexelToLinear(vec4 color) {
       static get properties () {
         return {
           src: String,
-          color: String,
-          'show-filelink': Boolean,
-          width: String,
-          height: String
+          'show-filelink': Boolean
         }
       }
 
@@ -59240,16 +59237,10 @@ vec4 envMapTexelToLinear(vec4 color) {
               this.renderScene();
             }.bind(this));
           } else if (filetype.toLowerCase() === 'stl') {
-            var color;
-            if (this.color === undefined) {
-              color = 0x0069f2;
-            } else {
-              color = parseInt(standardizeColor(this.color).substr(1), 16);
-            }
             loader = new STLLoader();
             loader.load(this.src, function (geometry) {
               var material = new MeshPhongMaterial({
-                color: color,
+                color: 0x0069f2,
                 specular: 0xc6c6c6
               });
               var mesh = new Mesh(geometry, material);
@@ -59338,12 +59329,6 @@ vec4 envMapTexelToLinear(vec4 color) {
       renderScene () {
         this.renderer.render(this.scene, this.camera);
       }
-    }
-
-    function standardizeColor (str) {
-      var ctx = document.createElement('canvas').getContext('2d');
-      ctx.fillStyle = str;
-      return ctx.fillStyle
     }
 
     window.customElements.define('gb3d-viewer', GB3DViewer);
