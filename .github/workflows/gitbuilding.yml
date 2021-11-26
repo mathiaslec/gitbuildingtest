@@ -15,12 +15,13 @@ jobs:
       - name: Build
         run: |
           pip install gitbuilding
+          cd gitbuilding/
           gitbuilding build-html
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages
-          FOLDER: _site/
+          FOLDER: gitbuilding/_site/
           # Automatically remove deleted files from the deploy branch
           CLEAN: true
