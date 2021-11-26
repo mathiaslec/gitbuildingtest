@@ -1,6 +1,7 @@
 # Test Project
 This is a test  
 This is another test
+this is the 3rd test
 
 This is a great place to start making your documentation!
 
