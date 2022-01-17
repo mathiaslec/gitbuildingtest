@@ -1,7 +1,7 @@
 The page is available here: https://mathiaslec.github.io/gitbuildingtest/  
   
-To have gitbuilding stuff in a separated folder, and allow a github page, here are modifications I added :
-- The path ".github/workflows " was placed at the root of the gitbuilding folder (instead of inside), so it looks like this : 
+To have gitbuilding stuff in a separated folder, and allow a github page, here are modifications I added :  
+- The path ".github/workflows " was placed at the root of the gitbuilding folder (instead of inside), so it looks like this :   
 ├── .github  
 │   └── workflows  
 │       └── gitbuilding.yml  
